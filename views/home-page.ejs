@@ -1,0 +1,9 @@
+<h1>Welcome <%= sess.name %></h1>
+
+<h3>Your details:</h3>
+<p>Name: <%= sess.name %> </p>
+<p>Email: <%= sess.email %></p>
+
+<form method="POST" action="/logout">
+    <button type="submit">Logout</button>
+</form>

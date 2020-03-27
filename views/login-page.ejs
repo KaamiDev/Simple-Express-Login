@@ -1,0 +1,22 @@
+<h1>Login Page</h1>
+
+<% if(query.success === 'account-created') { %>
+    <p style="color: green">Account created. Login below.</p>
+<% } %>
+<% if(query.err === 'invalid-details') { %>
+    <p style="color: red">Incorrect login details. Try again.</p>
+<% } %>
+<% if(query.err === 'missing-fields') { %>
+    <p style="color: red">Please make sure you've filled in all fields.</p>
+<% } %>
+<% if(query.err === 'not-logged-in') { %>
+    <p style="color: red">You need to login to access that page.</p>
+<% } %>
+
+<form method="POST" action="/login">
+    <input type="email" placeholder="email" name="email" required><br>
+    <input type="password" placeholder="password" name="password" required><br>
+    <button type="submit">Login</button>
+</form>
+
+<a href="/register">Register instead?</a>

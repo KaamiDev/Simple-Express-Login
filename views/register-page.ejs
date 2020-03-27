@@ -1,0 +1,21 @@
+<h1>Register Page</h1>
+
+<% if(query.err === 'user-exists') { %>
+    <p style="color: red">User with that email already exists.</p>
+<% } %>
+<% if(query.err === 'invalid-conf-pass') { %>
+    <p style="color: red">Confirmation password does not match.</p>
+<% } %>
+<% if(query.err === 'missing-fields') { %>
+    <p style="color: red">Please make sure you've filled in all fields.</p>
+<% } %>
+
+<form method="POST" action="/register">
+    <input type="text" placeholder="full name" name="name" required><br>
+    <input type="email" placeholder="email" name="email" required><br>
+    <input type="password" placeholder="password" name="password" required><br>
+    <input type="password" placeholder="confirm password" name="confpassword" required><br>
+    <button type="submit">Register</button>
+</form>
+
+<a href="/login">Login instead?</a>
